@@ -2,8 +2,8 @@ FROM node:16
 # 04/11/2022 v16.14.2
 # 2021 v12.19.0
 
-ENV MY_POD_NAME=dockerTEST2
-ENV MY_POD_IP=dockerTEST1
+ENV MY_POD_NAME="dockerTEST2"
+ENV MY_POD_IP="dockerTEST1"
 # Create app directory
 WORKDIR /usr/src/app
 
