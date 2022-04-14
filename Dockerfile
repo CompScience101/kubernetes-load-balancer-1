@@ -15,6 +15,6 @@ RUN npm ci --only=production
 
 COPY . .
 
-ENV MY_POD_NAME docker TEST2
-ENV MY_POD_IP docker TEST1
+ENV MY_POD_NAME=docker TEST2
+ENV MY_POD_IP=docker TEST1
 CMD node index.js
