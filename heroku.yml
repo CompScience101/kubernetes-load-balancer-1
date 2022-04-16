@@ -1,3 +1,6 @@
 build:
+  config:
+    MY_POD_ID:"dockerTEST1"
+    MY_POD_NAME: "dockerTEST2"
   docker:
     web: Dockerfile
