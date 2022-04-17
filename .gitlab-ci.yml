@@ -16,5 +16,5 @@ build:
   stage: build
   script:
     # - docker build --pull -t $TEST_IMAGE .
-    - docker build -t hub.docker.com:5000/kubeloadbalancertest1 ./
-    - docker push hub.docker.com:5000/cloudsandbox101/kubeloadbalancertest1
+    - docker build -t registry.hub.docker.com/kubeloadbalancertest1:latest ./
+    - docker push registry.hub.docker.com/cloudsandbox101/kubeloadbalancertest1:latest
