@@ -1,0 +1,20 @@
+image: docker:latest
+services:
+- docker:dind
+
+stages:
+- build
+
+variables:
+  TEST_IMAGE: gitlab.example.com:5555/sammy/hello_hapi:$CI_COMMIT_REF_NAME
+  RELEASE_IMAGE: gitlab.example.com:5555/sammy/hello_hapi:latest
+
+before_script:
+  - docker login -u 'cloudsandbox101' -p 'mydockerhub123' 
+
+build:
+  stage: build
+  script:
+    # - docker build --pull -t $TEST_IMAGE .
+    - docker build -t kubeloadbalancertest1 ./
+    - docker push kubeloadbalancertest1
