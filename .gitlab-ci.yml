@@ -10,7 +10,7 @@ variables:
   RELEASE_IMAGE: gitlab.example.com:5555/sammy/hello_hapi:latest
 
 before_script:
-  - docker login -u 'cloudsandbox101' -p 'mydockerhub123' 
+  - docker login -u 'cloudsandbox101' -p 'mydockerhub123' docker.io
 
 build:
   stage: build
