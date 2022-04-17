@@ -17,4 +17,4 @@ build:
   script:
     # - docker build --pull -t $TEST_IMAGE .
     - docker build -t kubeloadbalancertest1 ./
-    - docker push kubeloadbalancertest1
+    - docker push cloudsandbox101/kubeloadbalancertest1
