@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<script id="mydata" src="data.js"></script>
+<!-- <script id="myJson2"  src="text.js"></script> -->
+<script>
+    
+	/*if(document.getElementById('myJson2').textContent !== null) {
+		 console.log("document.getElementById('myJson2').textContent  is true");
+
+	}
+	else{
+		console.log("document.getElementById('myJson2').textContent  is false");
+	} */
+    //console.log("document.getElementById('myJson').textContent  ="+document.getElementById('myJson').textContent );
+	//console.log("document.getElementById('myJson2').textContent  ="+document.getElementById('myJson2').textContent );
+	
+	//console.log("document.getElementById('myJson').textContent  ="+(document.getElementById('myJson').textContent !== null ? document.getElementById('myJson').textContent : "null") );
+		
+	/*var jsonData = JSON.parse({
+	"myjson": "12094",
+	"test": "124987",
+	"deer": "1047938",
+	"john": "12374908",
+	"orange": "1284"
+}); */
+	setTimeout(render, 100);
+	function render(){
+		console.log("myJson "+JSON.stringify(myJson));
+		console.log("myJson.MY_POD_IP "+myJson.MY_POD_IP+", myJson.timestamp "+myJson.timestamp);
+		document.getElementById('ip').innerHTML = myJson.MY_POD_IP;
+		document.getElementById('timestamp').innerHTML = myJson.timestamp;
+	}
+    //var jsonData = JSON.parse(document.getElementById('myJson2').textContent);
+	//console.log(jsonData);
+/*	readTextFile();
+	function readTextFile() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && (this.status == 200 )) {
+		    callback(xhttp.responseText);
+		}
+		else if (this.readyState == 4 && !(this.status == 200)){
+		   callback("error reading file");
+		}
+	  };
+	  xhttp.open("GET", file, null);
+	  //xhttp.open("GET", "file:///interface.txt?application/xhtml+xml");
+	  xhttp.send();
+	} 
+	
+	readTextFile("data.json", function(text){
+		var data;
+		try{
+			data = JSON.parse(text);
+		}catch (){
+			data = text;
+		}
+		console.log(data);
+	}
+}); */
+</script>
+
+<style>
+	
+	@media only screen and (min-width: 500px) {
+		#img{
+			width: 100px;
+		}
+	}
+	@media only screen and (max-width: 500px) {
+		#img{
+			width: 20%;
+		}
+	}
+	@media only screen and (max-width: 400px) {
+		#img{
+			width: 80px;
+		}
+	}
+</style>
+<body style="background-color: #b3f0ff;">
+<div style="width: 85%; display: inline-block;">
+	<img src="kubernetes-combo-logo.png" alt="kubernetes-combo-logo.png" style="width: 100%; height: auto;">
+</div>
+<br>
+<br>
+<br>
+<h3>POD STATUS<h3/>
+<hr>
+<br>
+<br>
+<div style="align-items: center; display: flex;">
+	<div id="img" style="display: inline-block;" >
+		<img src="hours.jpg" alt="hours.jpg" style="width: 100%; height: auto;">
+	</div>
+	<div style=" display: inline-block;  align-items: center;">
+		<div id="timestamp" style="display: inline-block; font-size:5vw; "></div>
+	</div>
+</div>
+<br>
+<div style="align-items: center; display: flex;">
+	<div id="img" style=" display: inline-block;"> 
+		<img src="ip-address.jpg" alt="ip-address.jpg" style="width: 100%; height: auto;">
+	</div>
+	<div style=" display: inline-block;  height: 100%">
+		<div id="ip" style="display: inline-block; font-size:5vw; "></div>
+	</div>
+</div>
+
+<hr>
+<br>
+<!-- <iframe id="rawfile" src=""> -->
+<!-- <iframe id="parsingfile" src=""> -->
+<p>Visit this page again to see the Load balancer in work. NOTE: If you have enough of a combination of cluster nodes and applications
+   deployed on kubernetes the ip and time should change</p>
+<p>Coded by Nicholas Donald</p>
+
+</body>
+
+
+</html>

@@ -1,16 +1,17 @@
 {
-  "name": "safe_shuttle_nodejs_api",
+  "name": "kubernetes_test1_nodejs_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "test for load balancer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-	"start": "node index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "password-generator": "^2.3.2"
+    "password-generator": "^2.3.2",
+    "path": "^0.12.7"
   }
 }
