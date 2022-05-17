@@ -30,7 +30,16 @@
 		console.log("myJson "+JSON.stringify(myJson));
 		console.log("myJson.MY_POD_IP "+myJson.MY_POD_IP+", myJson.timestamp "+myJson.timestamp);
 		document.getElementById('ip').innerHTML = myJson.MY_POD_IP;
-		document.getElementById('timestamp').innerHTML = myJson.timestamp;
+		//document.getElementById('timestamp').innerHTML = myJson.timestamp;
+		/* get time */ 
+		var a = Math.round((new Date()).getTime() / 1000);//unix timestamp
+		//console.log("a " + a);//test
+		var newdate = new Date(a*1000);
+		var hour = newdate.getHours();
+		var min = newdate.getMinutes();
+		var sec = newdate.getSeconds();
+		const timestamp = hour+":"+min+":"+sec+" "+ (hour >= 12 ? "PM" : "AM");
+		document.getElementById('timestamp').innerHTML = timestamp;
 	}
     //var jsonData = JSON.parse(document.getElementById('myJson2').textContent);
 	//console.log(jsonData);

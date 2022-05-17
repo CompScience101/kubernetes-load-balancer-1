@@ -14,12 +14,14 @@ app.use(express.static('templates'));
 	const MY_POD_NAME = process.env.MY_POD_NAME;
 	const MY_POD_IP = process.env.MY_POD_IP;
 	//get time
+	/* 
 	var a = Math.round((new Date()).getTime() / 1000);//unix timestamp
 	//console.log("a " + a);//test
 	var newdate = new Date(a*1000);
 	var hour = newdate.getHours();
 	var min = newdate.getMinutes();
 	var sec = newdate.getSeconds();
+	*/
 	const timestamp = hour+":"+min+":"+sec+" "+ (hour >= 12 ? "PM" : "AM");
 	//const timestamp = a ; 
 	console.log("my root dir "+path.resolve());	//test
