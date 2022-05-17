@@ -39,6 +39,7 @@
 		var min = newdate.getMinutes();
 		var sec = newdate.getSeconds();
 		const timestamp = hour+":"+min+":"+sec+" "+ (hour >= 12 ? "PM" : "AM");
+		console.log("local time: "+timestamp);
 		document.getElementById('timestamp').innerHTML = timestamp;
 	}
     //var jsonData = JSON.parse(document.getElementById('myJson2').textContent);

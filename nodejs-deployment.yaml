@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: nodejs
-        image: cloudsandbox101/kubeloadbalancertest1:1.0.0
+        image: cloudsandbox101/kubeloadbalancertest1:1.0.1
         ports:
         - containerPort: 80
         env:
