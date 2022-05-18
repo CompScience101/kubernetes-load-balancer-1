@@ -22,8 +22,9 @@ app.use(express.static('templates'));
 	var min = newdate.getMinutes();
 	var sec = newdate.getSeconds();
 	*/
-	const timestamp = hour+":"+min+":"+sec+" "+ (hour >= 12 ? "PM" : "AM");
+	//const timestamp = hour+":"+min+":"+sec+" "+ (hour >= 12 ? "PM" : "AM");
 	//const timestamp = a ; 
+	const timestamp = ""; //replace this code later
 	console.log("my root dir "+path.resolve());	//test
   var myJson = { "MY_POD_IP": MY_POD_IP, "MY_POD_NAME": MY_POD_NAME, "timestamp":timestamp };
   ///* write to file */

@@ -1,7 +1,7 @@
 - Linode kubernetes agent nodes (x3) each for $10 per month
   ^- kubernetes API Endpoint: https://0ff59061-34c7-449e-9a92-f2be9e0fcd1e.us-southeast-2.linodelke.net:443 
 - Linode master vm for $10 per month  
-  ^- Password: Iversoncarter15
+  ^- Password: same as linode account password
 - view all vms, click on "linode" in sidebar on left of screen
 - view billing, click on account name top right, then choose "Billing & Contact information"
 - view kubeconfig.yaml and other information about kubernetes cluster config, go to
