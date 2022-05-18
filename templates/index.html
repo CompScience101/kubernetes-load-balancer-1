@@ -27,8 +27,8 @@
 }); */
 	setTimeout(render, 100);
 	function render(){
-		console.log("myJson "+JSON.stringify(myJson));
-		console.log("myJson.MY_POD_IP "+myJson.MY_POD_IP+", myJson.timestamp "+myJson.timestamp);
+		//console.log("myJson "+JSON.stringify(myJson));//test, hide during production
+		//console.log("myJson.MY_POD_IP "+myJson.MY_POD_IP+", myJson.timestamp "+myJson.timestamp);//test, hide during production
 		document.getElementById('ip').innerHTML = myJson.MY_POD_IP;
 		//document.getElementById('timestamp').innerHTML = myJson.timestamp;
 		/* get time */ 
@@ -39,7 +39,7 @@
 		var min = newdate.getMinutes();
 		var sec = newdate.getSeconds();
 		const timestamp = hour+":"+min+":"+sec+" "+ (hour >= 12 ? "PM" : "AM");
-		console.log("local time: "+timestamp);
+		//console.log("local time: "+timestamp);//test, hide during production
 		document.getElementById('timestamp').innerHTML = timestamp;
 	}
     //var jsonData = JSON.parse(document.getElementById('myJson2').textContent);
@@ -78,10 +78,22 @@
 		#img{
 			width: 100px;
 		}
+		#ip{ 
+			font-size:35px;
+		}
+		#timestamp{
+			font-size:35px;
+		}
 	}
 	@media only screen and (max-width: 500px) {
 		#img{
 			width: 20%;
+		}
+		#ip{ 
+			font-size: 5vw;
+		}
+		#timestamp{
+			font-size: 5vw;
 		}
 	}
 	@media only screen and (max-width: 400px) {
@@ -89,6 +101,17 @@
 			width: 80px;
 		}
 	}
+	@media only screen and (max-width: 300px) {
+		#img{
+			width: 20%;
+		}
+		#ip{ 
+			font-size: 15px;
+		}
+		#timestamp{
+			font-size: 15px;
+		}
+	
 </style>
 <body style="background-color: #b3f0ff;">
 <div style="width: 85%; display: inline-block;">
@@ -106,7 +129,7 @@
 		<img src="hours.jpg" alt="hours.jpg" style="width: 100%; height: auto;">
 	</div>
 	<div style=" display: inline-block;  align-items: center;">
-		<div id="timestamp" style="display: inline-block; font-size:5vw; "></div>
+		<div id="timestamp" style="display: inline-block; "></div>
 	</div>
 </div>
 <br>
@@ -115,7 +138,7 @@
 		<img src="ip-address.jpg" alt="ip-address.jpg" style="width: 100%; height: auto;">
 	</div>
 	<div style=" display: inline-block;  height: 100%">
-		<div id="ip" style="display: inline-block; font-size:5vw; "></div>
+		<div id="ip" style="display: inline-block;"></div>
 	</div>
 </div>
 
