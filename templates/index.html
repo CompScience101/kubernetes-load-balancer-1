@@ -74,6 +74,16 @@
 
 <style>
 	
+	@media only screen and (min-width: 600px) {
+		#mytitle{
+			width: 550px;
+		}
+	}
+	@media only screen and (max-width: 600px){
+		#mytitle {
+			width: 85%;
+		}
+	}
 	@media only screen and (min-width: 500px) {
 		#img{
 			width: 100px;
@@ -114,7 +124,7 @@
 	
 </style>
 <body style="background-color: #b3f0ff;">
-<div style="width: 85%; display: inline-block;">
+<div id="mytitle" style="display: inline-block;">
 	<img src="kubernetes-combo-logo.png" alt="kubernetes-combo-logo.png" style="width: 100%; height: auto;">
 </div>
 <br>
