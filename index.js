@@ -2,73 +2,56 @@ const express = require('express');
 //const path = require('path');
 const generatePassword = require('password-generator');
 const app = express();
+const fs = require("fs");
+const path = require("path");
+
 
 //read in json and parse json
 app.use(express.json());
-
+//make html files available
+app.use(express.static('templates'));
+	// get env's
+	const MY_POD_NAME = process.env.MY_POD_NAME;
+	const MY_POD_IP = process.env.MY_POD_IP;
+	//get time
+	/* 
+	var a = Math.round((new Date()).getTime() / 1000);//unix timestamp
+	//console.log("a " + a);//test
+	var newdate = new Date(a*1000);
+	var hour = newdate.getHours();
+	var min = newdate.getMinutes();
+	var sec = newdate.getSeconds();
+	*/
+	//const timestamp = hour+":"+min+":"+sec+" "+ (hour >= 12 ? "PM" : "AM");
+	//const timestamp = a ; 
+	const timestamp = ""; //replace this code later
+	console.log("my root dir "+path.resolve());	//test
+  var myJson = { "MY_POD_IP": MY_POD_IP, "MY_POD_NAME": MY_POD_NAME, "timestamp":timestamp };
+  ///* write to file */
+	fs.writeFile(path.resolve()+"/templates/data.js", "var myJson = "+JSON.stringify(myJson)+";", function(err) {
+		if(err) {
+			return console.log("file error: "+err);
+		}
+		console.log("The file was saved!");
+	}); 
 // Put all API endpoints under '/api'
-app.get('/api/passwords/', (req, res) => {
-  
-  const count = 5;
-  
-  // Generate some passwords
-  const passwords = Array.from(Array(count).keys()).map(i =>
-    generatePassword(12, false)
-  )
-    const MY_POD_NAME = process.env.MY_POD_NAME;
-    const MY_POD_IP = process.env.MY_POD_IP;
-
-    let date_ob = new Date();
-    //current day
-	let date = ("0" + date_ob.getDate()).slice(-2);
-
-	// current month
-	let month = ("0" + (date_ob.getMonth() + 1)).slice(-2);
-
-	// current year
-	let year = date_ob.getFullYear();
-
-	// current hours
-	let hours = date_ob.getHours();
-
-	// current minutes
-	let minutes = date_ob.getMinutes();
-
-	// current seconds
-	let seconds = date_ob.getSeconds();
+app.get('/', (req, res) => {
 	  // Return them as json
 	  //res.status(200).json(passwords);
 	  // prints date & time in YYYY-MM-DD HH:MM:SS format
-	console.log("date: "+year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds+" MY_POD_IP: "+MY_POD_IP+", MY_POD_NAME:"+MY_POD_NAME+" ALL variables: "+JSON.stringify(process.env));
-  res.status(200).send("Update from container, "+JSON.stringify({ date: "date: "+year + "-" + month + "-" + date + " " + hours + ":" + minutes + ":" + seconds, passwords: passwords,
-                                                                  mypodip: MY_POD_IP, mypodname: MY_POD_NAME}));
+  //console.log("my app path: "+app.get('appPath'));//test
   
+	
+  //res.status(200).sendFile(path.resolve()+"/templates/index.html");
+  //res.status(200).sendFile(path.resolve()+"/templates/data.json");
 
-  console.log(`Sent ${count} passwords and received`);
-});
-
-app.get('/', (req, res) => {
   
-  res.status(200).send("quick response on home api endpoint");
-  // Return them as json
- // res.status(200).json(passwords);
-  
-
   console.log(`hit home enpoint`);
 });
-app.post('/api/post', (req, res) => {
-  
-  // Return them as json
-  const { logo } = req.body;
-  res.status(201).send({ server_response: "your json logo was: "+logo});
-  
-  console.log(`received post request body logo: ${logo}`);
+
+app.get('/favico.ico', (req, res) => {
+    res.sendStatus(404);
 });
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
-//app.get('*', (req, res) => {
-//  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-//});
 
 const port = process.env.PORT || 80;
 app.listen(port);
