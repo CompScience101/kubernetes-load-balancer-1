@@ -4,27 +4,9 @@
 </head>
 <script id="mydata" src="data.js"></script>
 <!-- <script id="myJson2"  src="text.js"></script> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <script>
     
-	/*if(document.getElementById('myJson2').textContent !== null) {
-		 console.log("document.getElementById('myJson2').textContent  is true");
-
-	}
-	else{
-		console.log("document.getElementById('myJson2').textContent  is false");
-	} */
-    //console.log("document.getElementById('myJson').textContent  ="+document.getElementById('myJson').textContent );
-	//console.log("document.getElementById('myJson2').textContent  ="+document.getElementById('myJson2').textContent );
-	
-	//console.log("document.getElementById('myJson').textContent  ="+(document.getElementById('myJson').textContent !== null ? document.getElementById('myJson').textContent : "null") );
-		
-	/*var jsonData = JSON.parse({
-	"myjson": "12094",
-	"test": "124987",
-	"deer": "1047938",
-	"john": "12374908",
-	"orange": "1284"
-}); */
 	setTimeout(render, 100);
 	function render(){
 		//console.log("myJson "+JSON.stringify(myJson));//test, hide during production
@@ -42,34 +24,6 @@
 		//console.log("local time: "+timestamp);//test, hide during production
 		document.getElementById('timestamp').innerHTML = timestamp;
 	}
-    //var jsonData = JSON.parse(document.getElementById('myJson2').textContent);
-	//console.log(jsonData);
-/*	readTextFile();
-	function readTextFile() {
-	  var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-		if (this.readyState == 4 && (this.status == 200 )) {
-		    callback(xhttp.responseText);
-		}
-		else if (this.readyState == 4 && !(this.status == 200)){
-		   callback("error reading file");
-		}
-	  };
-	  xhttp.open("GET", file, null);
-	  //xhttp.open("GET", "file:///interface.txt?application/xhtml+xml");
-	  xhttp.send();
-	} 
-	
-	readTextFile("data.json", function(text){
-		var data;
-		try{
-			data = JSON.parse(text);
-		}catch (){
-			data = text;
-		}
-		console.log(data);
-	}
-}); */
 </script>
 
 <style>
