@@ -6,11 +6,12 @@
 - nodejs-deployment.yaml
 - nodejs-service.yaml
 
-## Node.js file
+## Node.js source code
 - index.js
 
 ## Frontend source code
 - templates/index.html
+- other files related html files in templates folder
 
 
 ## Kubernetes instructions
