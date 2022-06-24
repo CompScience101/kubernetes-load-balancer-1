@@ -11,7 +11,7 @@
 
 ## Frontend source code
 - templates/index.html
-- other files related html files in templates folder
+- other files related html to files in templates folder
 
 
 ## Kubernetes instructions
