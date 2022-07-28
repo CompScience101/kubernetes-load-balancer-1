@@ -21,3 +21,10 @@
 4. Deploy my kubernetes source code
 5. Get the IP of my kubernetes load balancer and visit this ip address(with home path) in your browser,
   then follow the instructions on the webpage
+  
+## .gitlab-ci.yml Instructions
+- Run this file on Gitlab to use it.
+- You will need to enter your Docker Hub credentials in this file to push to dockerhub, which will be used by Kubernetes.
+
+## heroku.yml Instructions
+1. Run this file on heroku to use it. 
