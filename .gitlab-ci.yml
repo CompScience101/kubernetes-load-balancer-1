@@ -11,7 +11,7 @@ variables:
 
 before_script:
   - echo "user $USER"
-  - echo "password $USER"
+  - echo "password $PASSWORD"
   - docker login -u '$USER' -p '$PASSWORD' docker.io
 
 build:
