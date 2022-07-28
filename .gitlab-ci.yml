@@ -10,9 +10,9 @@ variables:
   RELEASE_IMAGE: gitlab.example.com:5555/sammy/hello_hapi:latest
 
 before_script:
-  - echo "user ${user}"
-  - echo "password ${password}"
-  - docker login -u '${user}' -p '${password}' docker.io
+  - echo "user $user"
+  - echo "password $password"
+  - docker login -u '$user' -p '$password' docker.io
 
 build:
   stage: build
