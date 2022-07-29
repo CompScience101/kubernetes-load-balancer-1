@@ -24,7 +24,7 @@
   
 ## .gitlab-ci.yml Instructions
 - Run this file on Gitlab to use it.
-- You will need to enter your Docker Hub credentials in this file to push to dockerhub, which will be used by Kubernetes.
+- You will need to enter your Docker Hub credentials in this file to push to dockerhub, which will be used by Kubernetes. Either use your own gitlab environment variables or replace the environment variabls with your hardcode credentials.
 
 ## heroku.yml Instructions
 1. Run this file on heroku to use it. 
